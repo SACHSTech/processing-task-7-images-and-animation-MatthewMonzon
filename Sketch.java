@@ -12,8 +12,8 @@ public class Sketch extends PApplet {
 
   float fltCircleX = 200;
   float fltCircleY = 200;
-  float fltCircleSpeedX = 2;
-  float fltCircleSpeedY = 2;
+  float fltCircleSpeedX = 4;
+  float fltCircleSpeedY = 4;
 
   float fltWave;
   /**
@@ -53,15 +53,16 @@ public class Sketch extends PApplet {
      birdY += (float)(Math.sin(fltWave)) + ySpeed;
 
     //if statements to reverse the bird speed if it comes too close to the boundary
-    if (birdX < 0 + 10 || birdX > width - 150) {
+    if (birdX < 0 + 10 || birdX > width - 200) {
       xSpeed *= -1;
     }
 
-    if (birdY < 0 + 10 || birdY > height - 50) {
+    if (birdY < 0 + 10 || birdY > height - 200) {
       ySpeed *= -1;
     }
 
      //draws the circle
+     fill(250, 253, 15);
      ellipse(fltCircleX, fltCircleY, 100, 100);
 
      //moves the circle along a cosine wave
@@ -69,11 +70,11 @@ public class Sketch extends PApplet {
      fltCircleY += (float)(Math.cos(fltWave)) + fltCircleSpeedY;
  
      //if statements to reverse the circles speed if it comes too close to the boundary
-     if (fltCircleX < 0 + 10 || fltCircleX > width - 10); {
+     if (fltCircleX < 0 + 100 || fltCircleX > width - 100); {
        fltCircleSpeedX *= -1;
      }
  
-     if (fltCircleY < 0 + 10 || fltCircleY > height - 10) {
+     if (fltCircleY < 0 + 100 || fltCircleY > height - 100) {
        fltCircleSpeedY *= -1;
      }
   }
